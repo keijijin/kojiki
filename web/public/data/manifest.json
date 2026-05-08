@@ -7,6 +7,10 @@
       "label": "紹介ビデオ"
     },
     {
+      "href": "#/slide",
+      "label": "スライド"
+    },
+    {
       "href": "#/kochu",
       "label": "校註（書き下し＋注）"
     },

@@ -288,6 +288,16 @@ body {
   text-align: center;
 }
 
+.reader-body .manga-epilogue {
+  margin-top: 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line);
+}
+
+.reader-body .manga-epilogue h2 {
+  margin-top: 0;
+}
+
 .manga-panel img {
   max-width: 100%;
   height: auto;

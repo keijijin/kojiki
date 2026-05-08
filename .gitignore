@@ -1,2 +1,5 @@
 node_modules/
 dist/
+
+# slide/ を正として npm run data 時に web/public/slide/ へコピーする
+web/public/slide/

@@ -34,6 +34,12 @@ function homePage() {
       </a>
     `
     : '';
+  const slideCard = `
+      <a class="card" href="#/slide">
+        <h2>スライド</h2>
+        <p>概要をPDF/画像でまとめて見る。</p>
+      </a>
+    `;
   setMain(`
     <div class="hero">
       <h1>古事記を読む</h1>
@@ -41,6 +47,7 @@ function homePage() {
     </div>
     <div class="cards">
       ${movieCard}
+      ${slideCard}
       <a class="card" href="#/kochu/jo-ue">
         <h2>校註・書き下し文</h2>
         <p>ルビと脚註付きの本文。上・中・下の三巻。</p>
@@ -248,6 +255,38 @@ function moviePage() {
   `);
 }
 
+function slidePage() {
+  const pdf = '/slide/The_Genesis_Blueprint.pdf';
+  const img = '/slide/日本誕生物語.png';
+  setMain(`
+    <article class="content">
+      <h1 class="page-title">スライド</h1>
+      <p style="color:var(--muted);margin-top:0">
+        PDFと画像で概要をまとめています。
+      </p>
+      <p class="video-actions">
+        <a class="btn" href="${pdf}" target="_blank" rel="noopener noreferrer">PDFを開く</a>
+        <a class="btn" href="${pdf}" download>PDFをダウンロード</a>
+      </p>
+      <div style="border:1px solid var(--border);border-radius:14px;overflow:hidden;background:var(--surface);">
+        <iframe
+          title="The Genesis Blueprint"
+          src="${pdf}"
+          style="width:100%;height:min(80vh,900px);border:0;display:block;"
+          loading="lazy"
+        ></iframe>
+      </div>
+      <h2 style="margin-top:2rem">画像（日本誕生物語）</h2>
+      <p style="margin:0.5rem 0 0">
+        <a href="${img}" target="_blank" rel="noopener noreferrer">画像を別タブで開く</a>
+      </p>
+      <p style="margin:1rem 0 0">
+        <img src="${img}" alt="日本誕生物語" style="max-width:100%;height:auto;border-radius:14px;border:1px solid var(--border);" loading="lazy" />
+      </p>
+    </article>
+  `);
+}
+
 async function route() {
   await loadManifest();
   renderNav();
@@ -262,6 +301,10 @@ async function route() {
   const [a, b] = parts;
   if (a === 'movie') {
     moviePage();
+    return;
+  }
+  if (a === 'slide') {
+    slidePage();
     return;
   }
   if (a === 'kochu' && b) {
