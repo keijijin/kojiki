@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>古事記を読む</title>
+    <meta name="theme-color" content="#2d4a6f" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700&family=Zen+Old+Mincho:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <header class="site-header">
+        <a href="#/" class="logo">古事記を読む</a>
+        <button type="button" class="nav-toggle" aria-label="メニュー">☰</button>
+        <nav class="site-nav" id="site-nav"></nav>
+      </header>
+      <main id="main"></main>
+      <footer class="site-footer">
+        <p>
+          テキストは青空文庫の入力データ（角川文庫・武田祐吉校註ほか）を UTF-8
+          に整え、非営利の閲覧用に再構成したものです。
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
